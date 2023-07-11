@@ -16,4 +16,9 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">30%</item>
     </style>
+
+    <style name="round50">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

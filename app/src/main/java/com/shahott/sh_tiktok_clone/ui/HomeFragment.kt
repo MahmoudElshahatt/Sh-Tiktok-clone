@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.shahott.sh_tiktok_clone.MainActivity
 import com.shahott.sh_tiktok_clone.R
+import com.shahott.sh_tiktok_clone.util.showContentAboveStatusBar
 
 class HomeFragment : Fragment() {
 
@@ -17,6 +18,11 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         (activity as MainActivity).bottomNavigationVisibility(true)
         return inflater.inflate(R.layout.fragment_home, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        requireActivity().showContentAboveStatusBar()
     }
 
 

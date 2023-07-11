@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="tiktok_theme_color">#1a121f</color>
     <color name="grey">#515050</color>
+    <color name="reel_background">#000000</color>
 </resources>
