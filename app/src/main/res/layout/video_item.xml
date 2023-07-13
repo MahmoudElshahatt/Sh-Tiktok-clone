@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:background="@color/reel_background">
 
-    <!--    <VideoView-->
-    <!--        android:id="@+id/video_view"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+    <VideoView
+        android:id="@+id/vid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
@@ -179,10 +179,10 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="@dimen/_42sdp"
+            android:layout_width="@dimen/_38sdp"
             android:layout_height="@dimen/_42sdp"
             android:layout_marginTop="@dimen/_18sdp"
-            android:src="@drawable/ic_love" />
+            android:src="@drawable/ic_comment" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -194,16 +194,16 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:layout_width="@dimen/_42sdp"
+            android:layout_width="@dimen/_38sdp"
             android:layout_height="@dimen/_42sdp"
             android:layout_marginTop="@dimen/_18sdp"
-            android:src="@drawable/ic_love" />
+            android:src="@drawable/ic_share" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="1k"
+            android:text="2k"
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />

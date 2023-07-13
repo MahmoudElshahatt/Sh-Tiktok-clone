@@ -1,4 +1,4 @@
-package com.shahott.sh_tiktok_clone.ui
+package com.shahott.sh_tiktok_clone.ui.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
