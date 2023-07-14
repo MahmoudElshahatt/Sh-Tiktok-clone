@@ -23,6 +23,7 @@ class TikTokVideosAdapter(private val videos: List<Video>) : PagerAdapter() {
     private var myMediaPlayer: MediaPlayer? = null
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
+        isSoundOn=true
         val itemView = LayoutInflater.from(container.context).inflate(
             R.layout.video_item, container, false
         )
