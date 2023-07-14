@@ -13,5 +13,4 @@ data class Video(
     val video : Int? = null,
     val image : Int? = null,
     val videoLengthInMilli : Long? = 150000 ,
-
 )

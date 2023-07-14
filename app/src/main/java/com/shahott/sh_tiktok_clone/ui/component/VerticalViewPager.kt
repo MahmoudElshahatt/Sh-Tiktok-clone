@@ -17,50 +17,51 @@ class VerticalViewPager(
         overScrollMode = OVER_SCROLL_NEVER
     }
 
-
-    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
-        val interceptedTouch = super.onInterceptTouchEvent(ev)
-        swapXY(ev)
-        return interceptedTouch
+    private fun swapXY(event: MotionEvent): MotionEvent {
+        val newX = event.y / height * width
+        val newY = event.x / width * height
+        event.setLocation(newX, newY)
+        return event
     }
 
+    override fun onInterceptTouchEvent(ev: MotionEvent): Boolean {
+        val intercepted = super.onInterceptTouchEvent(swapXY(ev))
+        swapXY(ev)
+        return intercepted
+    }
 
     override fun onTouchEvent(ev: MotionEvent): Boolean {
         return super.onTouchEvent(swapXY(ev))
     }
 
-    private fun swapXY(ev: MotionEvent): MotionEvent {
-        val width = width.toFloat()
-        val height = height.toFloat()
-
-        val newX = ev.y / height * width
-        val newY = ev.x / width * height
-
-        ev.setLocation(newX, newY)
-
-        return ev
-    }
-
-
     private inner class VerticalPageTransformer : PageTransformer {
+
+        private val MIN_SCALE = 0.75f
+
+
         override fun transformPage(view: View, position: Float) {
             val pageWidth = view.width
             val pageHeight = view.height
 
             when {
-                position < -1 -> view.alpha = 0f
+                position < -1 -> {
+                    view.alpha = 0f
+                }
                 position <= 1 -> {
                     view.alpha = 1f
 
                     view.translationX = pageWidth * -position
-                    view.translationY = pageHeight * position
+                    val yPosition = position * pageHeight
+                    view.translationY = yPosition
 
-                    view.scaleX = 1f
-                    view.scaleY = 1f
+                    val scaleFactor = MIN_SCALE + (1 - MIN_SCALE) * (1 - Math.abs(position))
+                    view.scaleX = scaleFactor
+                    view.scaleY = scaleFactor
                 }
-                else -> view.alpha = 0f
+                else -> {
+                    view.alpha = 0f
+                }
             }
         }
     }
-
 }

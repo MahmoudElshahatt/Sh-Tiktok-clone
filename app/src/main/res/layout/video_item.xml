@@ -24,7 +24,7 @@
         android:alpha="0.8"
         android:text="Following"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.37"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         android:alpha="0.8"
         android:text="For You"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintStart_toEndOf="@+id/view"
@@ -57,8 +57,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="@dimen/_16sdp"
-        android:layout_height="@dimen/_16sdp"
+        android:layout_width="@dimen/_14sdp"
+        android:layout_height="@dimen/_14sdp"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -66,37 +66,41 @@
         app:srcCompat="@drawable/ic_music" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/txt_music_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:text="Original sound -@Shahtott"
         android:textColor="@color/white"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView2"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:id="@+id/txt_video_caption"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
-        android:text="Stupid bio...don't care."
+        android:ellipsize="end"
+        android:maxLines="1"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView2" />
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_music_name"
+        app:layout_constraintEnd_toStartOf="@+id/img_sound"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        tools:text="Stupid bio...don't care." />
 
     <TextView
+        android:id="@+id/txt_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
         android:text="@string/user_name"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintBottom_toTopOf="@+id/txt_video_caption"
         app:layout_constraintStart_toStartOf="@+id/imageView2" />
 
     <ImageView
@@ -110,7 +114,7 @@
         app:srcCompat="@drawable/ic_music_cd" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView"
+        android:id="@+id/img_sound"
         android:layout_width="@dimen/_28sdp"
         android:layout_height="@dimen/_28sdp"
         android:scaleType="centerCrop"
@@ -137,9 +141,10 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/shapeableImageView2"
-                android:layout_width="@dimen/_48sdp"
-                android:layout_height="@dimen/_48sdp"
+                android:id="@+id/sh_user_image"
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:padding="2dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_profile"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -156,56 +161,59 @@
                 android:padding="5dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/add"
-                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView2"
+                app:layout_constraintBottom_toBottomOf="@+id/sh_user_image"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/shapeableImageView2"
-                app:layout_constraintTop_toBottomOf="@+id/shapeableImageView2"
+                app:layout_constraintStart_toStartOf="@+id/sh_user_image"
+                app:layout_constraintTop_toBottomOf="@+id/sh_user_image"
                 app:shapeAppearanceOverlay="@style/round50" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <ImageView
-            android:layout_width="@dimen/_42sdp"
-            android:layout_height="@dimen/_42sdp"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
             android:layout_marginTop="@dimen/_18sdp"
             android:src="@drawable/ic_love" />
 
         <TextView
+            android:id="@+id/txt_reacts"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="1.5k"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="1.5k" />
 
         <ImageView
-            android:layout_width="@dimen/_38sdp"
-            android:layout_height="@dimen/_42sdp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_18sdp"
             android:src="@drawable/ic_comment" />
 
         <TextView
+            android:id="@+id/txt_comments"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="1k"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="1k" />
 
         <ImageView
-            android:layout_width="@dimen/_38sdp"
-            android:layout_height="@dimen/_42sdp"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_18sdp"
             android:src="@drawable/ic_share" />
 
         <TextView
+            android:id="@+id/txt_shares"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="2k"
             android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="14sp"
+            android:textStyle="bold"
+            tools:text="2k" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
