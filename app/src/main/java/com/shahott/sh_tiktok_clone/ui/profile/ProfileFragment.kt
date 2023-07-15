@@ -40,10 +40,10 @@ class ProfileFragment : Fragment() {
 
     private fun setUpViewPager() {
         pagerAdapter = FragmentPageAdapter(childFragmentManager, lifecycle)
-        binding.tebLayout.apply {
-            addTab(newTab().setIcon(R.drawable.ic_grid))
-            addTab(newTab().setIcon(R.drawable.ic_hearts))
-        }
+//        binding.tebLayout.apply {
+//            addTab(newTab().setIcon(R.drawable.ic_grid))
+//            addTab(newTab().setIcon(R.drawable.ic_hearts))
+//        }
         binding.viewpager.adapter = pagerAdapter
     }
 
