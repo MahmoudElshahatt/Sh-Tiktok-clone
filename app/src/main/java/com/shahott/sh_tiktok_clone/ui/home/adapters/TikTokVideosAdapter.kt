@@ -16,14 +16,17 @@ import com.shahott.sh_tiktok_clone.R
 import com.shahott.sh_tiktok_clone.models.Video
 import com.shahott.sh_tiktok_clone.ui.component.VerticalViewPager
 
-class TikTokVideosAdapter(private val videos: List<Video>) : PagerAdapter() {
+class TikTokVideosAdapter(
+    private val videos: List<Video>,
+    private val onProfileClick: (Video) -> Unit
+) : PagerAdapter() {
 
     private val videoViews = mutableListOf<VideoView>()
     private var isSoundOn = true
     private var myMediaPlayer: MediaPlayer? = null
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
-        isSoundOn=true
+        isSoundOn = true
         val itemView = LayoutInflater.from(container.context).inflate(
             R.layout.video_item, container, false
         )
@@ -42,6 +45,10 @@ class TikTokVideosAdapter(private val videos: List<Video>) : PagerAdapter() {
     private fun bindView(itemView: View, video: Video) {
         val imgUser = itemView.findViewById<ImageView>(R.id.sh_user_image)
         imgUser.setImageResource(video.userImage)
+
+        imgUser.setOnClickListener {
+            onProfileClick(video)
+        }
 
         val reacts = itemView.findViewById<TextView>(R.id.txt_reacts)
         val comments = itemView.findViewById<TextView>(R.id.txt_comments)

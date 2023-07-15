@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.shahott.sh_tiktok_clone.MainActivity
 import com.shahott.sh_tiktok_clone.R
 import com.shahott.sh_tiktok_clone.databinding.FragmentHomeBinding
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding= FragmentHomeBinding.inflate(layoutInflater)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
         (activity as MainActivity).bottomNavigationVisibility(false)
         return binding.root
     }
@@ -34,10 +35,11 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupReels() {
-        tiktokAdapter = TikTokVideosAdapter(viewModel.getTikTokVideos())
+        tiktokAdapter = TikTokVideosAdapter(viewModel.getTikTokVideos()) {
+            findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+        }
         binding.viewPager.adapter = tiktokAdapter
     }
-
 
 
 }
